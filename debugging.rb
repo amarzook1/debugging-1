@@ -42,7 +42,7 @@ end
 
 # Intended output:
 #
-encode("theswiftfoxjumpedoverthelazydog", "secretkey")
+#encode("theswiftfoxjumpedoverthelazydog", "secretkey")
 # => "EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL"
 #
 decode("EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL", "secretkey")
