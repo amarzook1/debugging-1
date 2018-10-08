@@ -17,7 +17,7 @@ end
 =end
 
 def encode(plaintext, key)
-  cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
+  cipher = key.chars.uniq + (('a'..'z').to_a - key.chars)# not including z cause 3 '.' instead of 2
   ciphertext_chars = plaintext.chars.map do |char|
     (65 + cipher.find_index(char).to_i).chr #add a to_i due to an error when converting
   end
@@ -25,7 +25,7 @@ def encode(plaintext, key)
 end
 
 def decode(ciphertext, key)
-  cipher = key.chars.uniq + (('a'...'z').to_a - key.chars)
+  cipher = key.chars.uniq + (('a'..'z').to_a - key.chars) # not including z cause 3 '.' instead of 2
   plaintext_chars = ciphertext.chars.map do |char|
     cipher[char.ord - 65] #The problem was the char.ord - 65 was the other way round giving a totally different output
   end
